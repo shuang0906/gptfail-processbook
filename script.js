@@ -27,7 +27,7 @@ const createChatLi = (message, className) => {
   let chatContent =
     className === 'outgoing'
       ? `<p></p>`
-      : `<span class="material-symbols-outlined">smart_toy</span> <p></p>`;
+      : `<span class="material-symbols-outlined"></span> <p></p>`;
   chatLi.innerHTML = chatContent;
   chatLi.querySelector('p').textContent = message;
   return chatLi;
@@ -72,7 +72,7 @@ const handleChat = () => {
   chatBox.scrollTo(0, chatBox.scrollHeight);
 
   setTimeout(() => {
-    const incomingChatLi = createChatLi('Thinking...', 'incoming');
+    const incomingChatLi = createChatLi('...', 'incoming');
     chatBox.appendChild(incomingChatLi);
     chatBox.scrollTo(0, chatBox.scrollHeight);
     generateResponse(incomingChatLi);
@@ -83,12 +83,13 @@ chatInput.addEventListener('input', () => {
   chatInput.style.height = `${inputInitHeight}px`;
   chatInput.style.height = `${chatInput.scrollHeight}px`;
 });
-chatInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && !e.shiftKey && window.innerWidth > 800) {
-    e.preventDefault();
-    handleChat();
-  }
-});
+
+// chatInput.addEventListener('keydown', (e) => {
+//   if (e.key === 'Enter' && !e.shiftKey && window.innerWidth > 800) {
+//     e.preventDefault();
+//     handleChat();
+//   }
+// });
 chatbotToggle.addEventListener('click', () =>
   document.body.classList.toggle('show-chatbot')
 );
