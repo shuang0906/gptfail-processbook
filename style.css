@@ -1,0 +1,253 @@
+.backcover {
+  width: 100%;
+  height:600px;
+}
+
+.📖-footer{
+  display: none;
+}
+
+@font-face {
+  font-family: "TestSöhne";
+  src: url("/font/TestSöhne-Halbfett.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "TestSöhne";
+  src: url("/font/TestSöhne-Buch.otf");
+  font-weight: 100;
+}
+
+.punc {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.📖-root {
+  background: black !important;
+}
+
+.📖-zoom-content {
+  background: transparent !important;
+}
+
+.📖-controls {
+  background: transparent !important;
+}
+
+.📖-control {
+  min-width: 64px;
+  padding: 4px 8px;
+  border: 2px solid white !important;
+  font-family: "TestSöhne";
+  font-size: 16px;
+  color: white !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 4px !important;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 960px) {
+  .📖-view-row {
+    margin-bottom: 8px;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "TestSöhne";
+  font-weight: 100;
+}
+
+a:link {
+  color: skyblue;
+}
+
+a:visited {
+  color: greenyellow;
+}
+
+a:hover {
+  color: orangered;
+}
+
+a:active {
+  color: violet;
+}
+
+.chatbot__button {
+  z-index: 1001;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3c46ff;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+.chatbot__button div {
+  /* position: absolute; */
+}
+.show-chatbot .chatbot__button div:first-child,
+.chatbot__button div:last-child {
+  display: none;
+}
+.show-chatbot .chatbot__button div:last-child {
+  display: contents;
+}
+.chatbot {
+  z-index: 1000;
+  position: fixed;
+  bottom: 94px;
+  right: 20px;
+  width: 420px;
+  background-color: #ffffff;
+  border: solid 2px black;
+  border-radius: 4px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1) 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  transform: scale(0.5);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.show-chatbot .chatbot {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+.chatbot__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 20px;
+  position: relative;
+  background-color: #3c46ff;
+  text-align: center;
+}
+
+.status {
+  content: "";
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+  display: block;
+  border-radius: 50%;
+  background-color: #42ff00;
+}
+
+.chatbot__header span {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: #202020;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.chatbox__title {
+  font-family: "TestSöhne";
+  font-size: 20px;
+  color: #ffffff;
+}
+.chatbot__box {
+  padding: 30px 20px 100px;
+}
+.chatbot__chat {
+  display: flex;
+}
+.chatbot__chat p {
+  max-width: 75%;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  color: #ffffff;
+  background-color: #3c46ff;
+  border-radius: 20px 20px 0 20px;
+  padding: 12px 16px;
+}
+.chatbot__chat p.error {
+  color: #721c24;
+  background: #f8d7da;
+}
+.incoming p {
+  color: #202020;
+  background: #f1f1ef;
+  border-radius: 20px 20px 20px 0;
+}
+.incoming span {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #7ba698;
+  border-radius: 50%;
+  align-self: flex-end;
+  margin-right: 10px;
+}
+.outgoing {
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+.incoming {
+  margin: 20px 0;
+}
+.chatbot__input-box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.chatbot__textarea {
+  font-family: "TestSöhne";
+  font-weight: 100;
+  margin: 20px;
+  padding: 12px;
+  width: 100%;
+  min-height: 50px !important;
+  font-size: 0.95rem;
+  color: #202020;
+  border: 2px solid #dcdcdc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.chatbot__input-box span {
+  font-size: 1.75rem;
+  color: #202020;
+  cursor: pointer;
+  visibility: hidden;
+}
+.chatbot__textarea:valid ~ span {
+  visibility: visible;
+}
+
+@media (max-width: 490px) {
+  .chatbot {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .chatbot__box {
+    height: 90%;
+  }
+  .chatbot__header span {
+    display: inline;
+  }
+}
