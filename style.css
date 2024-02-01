@@ -9,13 +9,13 @@
 
 @font-face {
   font-family: "TestSöhne";
-  src: url("/font/TestSöhne-Halbfett.otf");
+  src: url("font/TestSöhne-Halbfett.otf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "TestSöhne";
-  src: url("/font/TestSöhne-Buch.otf");
+  src: url("font/TestSöhne-Buch.otf");
   font-weight: 100;
 }
 
